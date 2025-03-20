@@ -1,0 +1,209 @@
+/* Global Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header:hover {
+    background-color: #333;
+    transform: translateY(-5px); /* Subtiel løft-effekt */
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.2s ease-in-out, letter-spacing 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff4081;
+    transform: translateY(-3px); /* Effekt ved hover */
+    letter-spacing: 10px; /* Tilføj lidt luft til links */
+}
+
+/* Section */
+section {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards, slideUp 1s ease-out;
+    background-color: #1f1f1f; /* Baggrundsfarve for sektionen */
+    border-radius: 50px; /* Rund kant */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Blød skygge */
+    margin-top: 50px; /* Afstand mellem sektionerne */
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Fade-in og Slide-up Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Section Elements Animation */
+section h2 {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeIn 1s 0.5s forwards, slideInLeft 1s ease-out;
+}
+
+section p {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: fadeIn 1s 1s forwards, slideInRight 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-20px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Fade-In Class */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Class to Make Visible */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    font-size: 14px;
+    color: #bbb;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+footer:hover {
+    background-color: #333;
+    transform: translateY(5px); /* Subtiel løft-effekt på footer */
+}
+
+/* Hover effekter til links i footer */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff4081;
+}
+
+/* Hover effekter til knapper */
+button {
+    background-color: #ff4081;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0affff;
+    transform: scale(1.1); /* Knapperne bliver lidt større ved hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* Billedgrid */
+section.images {
+    padding: 50px 20px;
+    margin-top: 50px;
+    background-color: #1f1f1f;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid Layout for Images */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamisk antal kolonner med min 250px */
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Ens størrelse på billeder */
+.image-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
